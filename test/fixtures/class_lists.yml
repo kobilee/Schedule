@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: MyString
+  class_type: MyString
+  short_name: MyString
+  instructor: MyString
+  day: MyString
+  start_time: 2021-06-05 14:47:15
+  class_length: 1
+  section: false
+  location: MyString
+  course_cap: 1
+  view_in_schedule: false
+  in_schedule: false
+
+two:
+  course: MyString
+  class_type: MyString
+  short_name: MyString
+  instructor: MyString
+  day: MyString
+  start_time: 2021-06-05 14:47:15
+  class_length: 1
+  section: false
+  location: MyString
+  course_cap: 1
+  view_in_schedule: false
+  in_schedule: false

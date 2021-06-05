@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @class_list.course %>
+</p>
+
+<p>
+  <strong>Class type:</strong>
+  <%= @class_list.class_type %>
+</p>
+
+<p>
+  <strong>Short name:</strong>
+  <%= @class_list.short_name %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @class_list.instructor %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @class_list.day %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @class_list.start_time %>
+</p>
+
+<p>
+  <strong>Class length:</strong>
+  <%= @class_list.class_length %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @class_list.section ? "LEC" : "TUT" %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @class_list.location %>
+</p>
+
+<p>
+  <strong>Course cap:</strong>
+  <%= @class_list.course_cap %>
+</p>
+
+<p>
+  <strong>View in schedule:</strong>
+  <%= @class_list.view_in_schedule %>
+</p>
+
+<p>
+  <strong>In schedule:</strong>
+  <%= @class_list.in_schedule %>
+</p>
+
+<%= link_to 'Edit', edit_class_list_path(@class_list), class:"btn btn-secondary" %> 
+<%= link_to 'Back', class_lists_path, class:"btn btn-secondary" %>

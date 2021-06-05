@@ -1,0 +1,77 @@
+<%= form_with(model: class_list) do |form| %>
+  <% if class_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_list.errors.count, "error") %> prohibited this class_list from being saved:</h2>
+
+      <ul>
+        <% class_list.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :course %>
+    <%= form.text_field :course %>
+  </div>
+
+  <div class="field">
+    <%= form.label :class_type %>
+    <%= form.text_field :class_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_name %>
+    <%= form.text_field :short_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instructor %>
+    <%= form.text_field :instructor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.text_field :day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.time_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :class_length %>
+    <%= form.number_field :class_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :section, "Is this a Lecture?" %>
+    <%= form.check_box :section %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_cap %>
+    <%= form.number_field :course_cap %>
+  </div>
+
+  <div class="field">
+    <%= form.label :view_in_schedule %>
+    <%= form.check_box :view_in_schedule %>
+  </div>
+
+  <div class="field">
+    <%= form.label :in_schedule %>
+    <%= form.check_box :in_schedule %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
