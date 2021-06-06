@@ -11,67 +11,98 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :course %>
-    <%= form.text_field :course %>
+  <div class="field form-group">
+    <%= 
+      form.text_field :course, 
+      class:"form-control",
+      placeholder:"Course"
+    %>
+    <br/>
   </div>
 
-  <div class="field">
-    <%= form.label :class_type %>
-    <%= form.text_field :class_type %>
+  <div class="field form-group">
+    <%= 
+      form.text_field :class_type,
+      class:"form-control",
+      placeholder:"Class Type"
+    %>
+    <br/>
   </div>
 
-  <div class="field">
-    <%= form.label :short_name %>
-    <%= form.text_field :short_name %>
+  <div class="field form-group">
+    <%= 
+      form.text_field :short_name,
+      class:"form-control",
+      placeholder:"Short Name"
+    %>
+    <br/>
   </div>
 
-  <div class="field">
-    <%= form.label :instructor %>
-    <%= form.text_field :instructor %>
+  <div class="field form-group">
+    <%= 
+      form.text_field :instructor,
+      class:"form-control",
+      placeholder:"Instructor"
+    %>
+    <br/>
   </div>
 
-  <div class="field">
-    <%= form.label :day %>
-    <%= form.text_field :day %>
+  <div class="field form-group">
+    <%= 
+      form.text_field :day,
+      class:"form-control",
+      placeholder:"Day" 
+    %>
+    <br/>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :start_time %>
-    <%= form.time_select :start_time %>
+    <%= form.time_select :start_time, {minute_step: 60} %>
+    <br/> <br/>
   </div>
 
-  <div class="field">
-    <%= form.label :class_length %>
-    <%= form.number_field :class_length %>
+  <div class="field form-group">
+    <%= 
+      form.number_field :class_length,
+      class:"form-control",
+      placeholder:"Class Length"
+    %>
+    <br/>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :section, "Is this a Lecture?" %>
-    <%= form.check_box :section %>
+    <%= form.check_box :section, class:"form-check-input" %>
+    <br/> <br/>
   </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+  <div class="field form-group">
+    <%= 
+      form.text_field :location,
+      class:"form-control",
+      placeholder:"Location"
+    %>
+    <br/>
   </div>
 
-  <div class="field">
-    <%= form.label :course_cap %>
-    <%= form.number_field :course_cap %>
+  <div class="field form-group">
+    <%= 
+      form.number_field :course_cap,
+      class:"form-control",
+      placeholder:"Course Cap"
+    %>
+    <br/>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :view_in_schedule %>
-    <%= form.check_box :view_in_schedule %>
-  </div>
-
-  <div class="field">
-    <%= form.label :in_schedule %>
-    <%= form.check_box :in_schedule %>
+    <%= form.check_box :view_in_schedule, class:"form-check-input" %>
+    <br/> <br/>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-dark" %>
   </div>
+  <br/>
 <% end %>

@@ -50,15 +50,5 @@
   <%= @class_list.course_cap %>
 </p>
 
-<p>
-  <strong>View in schedule:</strong>
-  <%= @class_list.view_in_schedule %>
-</p>
-
-<p>
-  <strong>In schedule:</strong>
-  <%= @class_list.in_schedule %>
-</p>
-
 <%= link_to 'Edit', edit_class_list_path(@class_list), class:"btn btn-secondary" %> 
-<%= link_to 'Back', class_lists_path, class:"btn btn-secondary" %>
+<%= link_to 'Back', class_lists_path %>
