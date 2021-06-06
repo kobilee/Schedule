@@ -1,5 +1,7 @@
 class ClassListsController < ApplicationController
   before_action :set_class_list, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /class_lists or /class_lists.json
   def index
@@ -12,7 +14,8 @@ class ClassListsController < ApplicationController
 
   # GET /class_lists/new
   def new
-    @class_list = ClassList.new
+    #@class_list = ClassList.new
+    @class_list = current_user.ClassLists.build
   end
 
   # GET /class_lists/1/edit
@@ -21,7 +24,7 @@ class ClassListsController < ApplicationController
 
   # POST /class_lists or /class_lists.json
   def create
-    @class_list = ClassList.new(class_list_params)
+    @class_list = current_user.ClassLists.build(class_list_params)
 
     respond_to do |format|
       if @class_list.save
@@ -56,6 +59,11 @@ class ClassListsController < ApplicationController
     end
   end
 
+  def correct_user
+    @class_list = current_user.ClassLists.find_by(id: params[:id])
+    redirect_to class_lists_path, notice: "Not authorized to edit this class" if @class_list.nil?
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_class_list
@@ -64,6 +72,6 @@ class ClassListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def class_list_params
-      params.require(:class_list).permit(:course, :class_type, :short_name, :instructor, :day, :start_time, :class_length, :section, :location, :course_cap, :view_in_schedule, :in_schedule)
+      params.require(:class_list).permit(:course, :class_type, :short_name, :instructor, :day, :start_time, :class_length, :section, :location, :course_cap, :view_in_schedule, :in_schedule, :user_id)
     end
 end

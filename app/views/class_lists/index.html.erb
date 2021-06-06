@@ -23,23 +23,25 @@
 
   <tbody>
     <% @class_lists.each do |class_list| %>
-      <tr>
-        <td><%= class_list.course %></td>
-        <td><%= class_list.class_type %></td>
-        <td><%= class_list.short_name %></td>
-        <td><%= class_list.instructor %></td>
-        <td><%= class_list.day %></td>
-        <td><%= class_list.start_time.strftime("%H:%M") %></td>
-        <td><%= class_list.class_length %></td>
-        <td><%= class_list.section ? "LEC" : "TUT" %></td>
-        <td><%= class_list.location %></td>
-        <td><%= class_list.course_cap %></td>
-        <td><%= class_list.view_in_schedule %></td>
-        <td><%= class_list.in_schedule %></td>
-        <td><%= link_to 'Show', class_list %></td>
-        <td><%= link_to 'Edit', edit_class_list_path(class_list) %></td>
-        <td><%= link_to 'Destroy', class_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if class_list.user == current_user %>
+        <tr>
+          <td><%= class_list.course %></td>
+          <td><%= class_list.class_type %></td>
+          <td><%= class_list.short_name %></td>
+          <td><%= class_list.instructor %></td>
+          <td><%= class_list.day %></td>
+          <td><%= class_list.start_time.strftime("%H:%M") %></td>
+          <td><%= class_list.class_length %></td>
+          <td><%= class_list.section ? "LEC" : "TUT" %></td>
+          <td><%= class_list.location %></td>
+          <td><%= class_list.course_cap %></td>
+          <td><%= class_list.view_in_schedule %></td>
+          <td><%= class_list.in_schedule %></td>
+          <td><%= link_to 'Show', class_list %></td>
+          <td><%= link_to 'Edit', edit_class_list_path(class_list) %></td>
+          <td><%= link_to 'Destroy', class_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
